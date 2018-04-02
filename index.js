@@ -24,7 +24,7 @@ for (let i = 0; i < 5; i++) {
 rpio.open(40, rpio.OUTPUT, rpio.LOW);
 rpio.open(11, rpio.INPUT);
 
-if (rpio(11) == 'high') {
+if (rpio.read(11) == 'high') {
     console.log('button presed');
     rpio.write(40, rpio.HIGH);
 } else {
