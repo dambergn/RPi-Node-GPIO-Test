@@ -7,12 +7,11 @@ rpio.open(11, rpio.INPUT);
 console.log('Pin 11 is currently set ' + (rpio.read(11) ? 'high' : 'low'));
 
 // If button pressed on pin 11 then light LED on pin 40
-rpio.open(40, rpio.OUTPUT, rpio.LOW);
-rpio.open(11, rpio.INPUT);
+rpio.open(13, rpio.OUTPUT, rpio.LOW);
 
-if (rpio.read(11) === 'high') {
-  console.log('button presed');
-  rpio.write(40, rpio.HIGH);
+if (rpio.read(11) === high) {
+  console.log('button is presed');
+  rpio.write(13, rpio.HIGH);
 } else {
-  rpio.write(40, rpio.LOW);
+  rpio.write(13, rpio.LOW);
 };

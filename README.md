@@ -2,6 +2,7 @@
 RPi-Node-GPIO-Test
 
 # Packages used
+https://www.npmjs.com/package/rpio
 rpio
 
 # RPi GPIO pinout
