@@ -10,7 +10,7 @@ console.log('Pin 11 is currently set ' + (rpio.read(11) ? 'high' : 'low'));
 rpio.open(40, rpio.OUTPUT, rpio.LOW);
 rpio.open(11, rpio.INPUT);
 
-if (rpio.read(11) == 'high') {
+if (rpio.read(11) === 'high') {
   console.log('button presed');
   rpio.write(40, rpio.HIGH);
 } else {
