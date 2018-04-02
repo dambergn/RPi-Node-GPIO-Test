@@ -12,6 +12,7 @@ function pollcb(pin) {
    */
   let state = rpio.read(pin) ? 'pressed' : 'released';
   console.log('Button event on P%d (button currently %s)', pin, state);
+
 }
 
-rpio.poll(11, pollcb);
+rpio.poll(11, pollcb(11));
