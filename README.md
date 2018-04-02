@@ -8,7 +8,7 @@ rpio
 ![alt text](./rp2_pinout.png)
 
 # Blinking LED test
-```
+```javascript
 //Blinking LED 5x test, set to pin12 || GPIO18
 rpio.open(12, rpio.OUTPUT, rpio.LOW);
 
