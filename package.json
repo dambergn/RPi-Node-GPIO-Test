@@ -1,0 +1,22 @@
+{
+  "name": "rpi-node-gpio-test",
+  "version": "1.0.0",
+  "description": "RPi-Node-GPIO-Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dambergn/RPi-Node-GPIO-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dambergn/RPi-Node-GPIO-Test/issues"
+  },
+  "homepage": "https://github.com/dambergn/RPi-Node-GPIO-Test#readme",
+  "dependencies": {
+    "rpio": "^0.9.21"
+  }
+}
