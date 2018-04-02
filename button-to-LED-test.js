@@ -13,19 +13,20 @@ function pollcb(pin) {
    */
   let state = rpio.read(pin) ? 'pressed' : 'released';
   console.log('Button event on P%d (button currently %s)', pin, state);
-  console.log('state test:' + state);
+  // console.log('state test:' + state);
 
   if (state == 'state test:pressed') {
-    for (let i = 0; i < 5; i++) {
-      console.log('LED on pin 12');
-      // on for 1 second
-      rpio.write(12, rpio.HIGH);
-      rpio.sleep(1);
+    console.log('if statement triggered');
+    // for (let i = 0; i < 5; i++) {
+    //   console.log('LED on pin 12');
+    //   // on for 1 second
+    //   rpio.write(12, rpio.HIGH);
+    //   rpio.sleep(1);
 
-      // Off for half a second (500ms)
-      rpio.write(12, rpio.LOW);
-      rpio.msleep(500);
-    };
+    //   // Off for half a second (500ms)
+    //   rpio.write(12, rpio.LOW);
+    //   rpio.msleep(500);
+    // };
   };
 };
 
