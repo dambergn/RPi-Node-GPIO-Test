@@ -2,7 +2,7 @@
 
 const rpio = require('rpio');
 
-rpio.open(13, rpio.INPUT, rpio.PULL_DOWN);
+rpio.open(11, rpio.INPUT, rpio.PULL_DOWN);
 
 function pollcb(pin) {
   /*
@@ -14,4 +14,4 @@ function pollcb(pin) {
   console.log('Button event on P%d (button currently %s)', pin, state);
 }
 
-rpio.poll(13, pollcb);
+rpio.poll(11, pollcb);
