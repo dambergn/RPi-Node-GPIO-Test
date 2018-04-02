@@ -19,3 +19,14 @@ for (let i = 0; i < 5; i++) {
     rpio.write(12, rpio.LOW);
     rpio.msleep(500);
 };
+
+// If button pressed on pin 11 then light LED on pin 40
+rpio.open(40, rpio.OUTPUT, rpio, LOW);
+rpio.open(11, rpio.INPUT);
+
+if (rpio(11) == 'high') {
+    console.log('button presed');
+    rpio.write(40, rpio.HIGH);
+} else {
+    rpio.write(40, rpio.LOW);
+};
