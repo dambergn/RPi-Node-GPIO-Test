@@ -15,4 +15,4 @@ function pollcb(pin) {
 
 }
 
-rpio.poll(11, pollcb(11));
+rpio.poll(11, pollcb);
