@@ -1,7 +1,26 @@
 # RPi-Node-GPIO-Test
 RPi-Node-GPIO-Test
 
-# Packages used
+#Raspian download and install
+Website:
+https://www.raspberrypi.org/downloads/raspbian/
+I reccomend using the torrent, it is much faster by a few HOURS!
+
+Use Etcher to format and write image to the SD card.
+Availabe for Windows, Mac, And Linux.
+Website:
+https://etcher.io/
+
+# Install mongodb
+note: Since raspian is still only a 32bit operating system mongodb is limited to version 2.4
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mongodb-server
+```
+
+# NPM Packages used
+Website:
 https://www.npmjs.com/package/rpio
 rpio
 
