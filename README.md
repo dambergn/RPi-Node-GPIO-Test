@@ -1,5 +1,5 @@
 # RPi-Node-GPIO-Test
-RPi-Node-GPIO-Test
+RPi-Node-GPIO-Tests
 
 #Raspian download and install
 Website:
@@ -24,6 +24,10 @@ Website:
 https://www.npmjs.com/package/rpio
 rpio
 
+Website:
+https://www.npmjs.com/package/onoff
+onoff
+
 # RPi GPIO pinout
 ![alt text](./rp2_pinout.png)
 
@@ -42,4 +46,22 @@ for (let i = 0; i < 5; i++) {
     rpio.write(12, rpio.LOW);
     rpio.msleep(500);
 };
+```
+
+#pi64 install workpath
+```
+sudo apt-get update
+sudo apt-get install nano
+sudo apt-get install git
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install mongodb
+sudo apt-get install make
+sudo npm install -g node-gyp
+sudo apt-get install build-essential
+
+sudo groupadd gpio
+sudo chown -R root:gpio /sys/class/gpio
+sudo adduser root gpio
 ```
