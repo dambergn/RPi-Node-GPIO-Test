@@ -11,7 +11,8 @@ function pollcb(pin) {
    * print the current state after a event is detected.
    */
   let state = rpio.read(pin) ? 'pressed' : 'released';
-  console.log('Button event on P%d (button currently %s)', pin, state);
+  // console.log('Button event on P%d (button currently %s)', pin, state);
+  console.log('button pressed');
 
 }
 
