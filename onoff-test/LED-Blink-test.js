@@ -1,7 +1,9 @@
 'use strict';
 
+// pinout uses actuall GPIO pin not physical pin.
+
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-var LED = new Gpio(12, 'out'); //use GPIO pin 4, and specify that it is output
+var LED = new Gpio(18, 'out'); //use GPIO pin 18, and specify that it is output
 var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
 
 function blinkLED() { //function to start blinking
