@@ -64,4 +64,22 @@ sudo apt-get install build-essential
 sudo groupadd gpio
 sudo chown -R root:gpio /sys/class/gpio
 sudo adduser root gpio
+sudo adduser pi gpio
 ```
+
+#use httpie to switch LED over command line
+- replace " " with localhost or remote ip address.
+http POST "ip address':3000/led
+
+#command notes
+sudo apt-get install wpasupplicant
+- ip address
+- sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+network={
+    ssid="wireless"
+    psk="password"
+    key_mgmt=WPA-PSK
+}
+- sudo rm -rf /var/run/wpa_supplicant/wlan0
+- sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf -Dwext
+- sudo ifup wlan0, wpa_supplicant

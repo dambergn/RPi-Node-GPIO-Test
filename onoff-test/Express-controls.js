@@ -12,10 +12,12 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+// Post request to run function and return page.
 app.post('/led',(req, res) => {
-  turnOnLed();
-  res.sendFile(__dirname + '/index.html');
+  switchLed(); // exicutes the function to toggle LED state.
+  res.sendFile(__dirname + '/index.html'); // returns the previous page.
 });
+// using httpie  http POST 192.168.10.13:3000/led
 
 // Monitors for button press event.
 button.watch(function (err, value) {
@@ -23,7 +25,7 @@ button.watch(function (err, value) {
     throw (err);
   };
   if (value === 0) {
-    turnOnLed();
+    switchLed();
   };
 });
 
@@ -32,15 +34,15 @@ led.writeSync(0);
 
 // Switches LED between on and off.
 let isLedOn = false;
-function turnOnLed() {
+function switchLed() {
   isLedOn = !isLedOn;
   if (isLedOn === true) {
     led.writeSync(1);
-    console.log('Led turned on');
+    console.log('Led turned on', new Date());
   };
   if (isLedOn === false) {
     led.writeSync(0);
-    console.log('Led turned off');
+    console.log('Led turned off', new Date());
   };
 };
 
