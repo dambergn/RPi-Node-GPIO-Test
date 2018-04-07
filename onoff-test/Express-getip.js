@@ -45,14 +45,16 @@ led.writeSync(0);
 let isLedOn = false;
 function switchLed() {
   isLedOn = !isLedOn;
-  if (isLedOn === true) {
-    led.writeSync(1);
-    console.log('Led turned on', new Date());
+  let state = 0;
+  let message = 'off';
+
+  if (isLedOn) {
+    state = 1
+    message = 'on';
   };
-  if (isLedOn === false) {
-    led.writeSync(0);
-    console.log('Led turned off', new Date());
-  };
+  led.writeSync(state);
+  console.log('Led turned ', message, new Date());
+
   io.emit('ledStatus', isLedOn);
 };
 

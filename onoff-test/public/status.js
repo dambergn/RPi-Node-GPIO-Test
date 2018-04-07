@@ -18,11 +18,11 @@ form.addEventListener('submit', (e) => {
 // Listen for events
 socket.on('ledStatus', (data) => {
   let led = '';
-  if (data === true) {
+  if (data) {
     led = 'on';
-  }
-  if (data === false) {
+  } else {
     led = 'off';
   }
+  
   ledStatus.innerHTML = '<p><strong>LED is currently ' + led + '</strong></p>';
 });
