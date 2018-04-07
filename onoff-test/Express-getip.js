@@ -53,6 +53,7 @@ function switchLed() {
     led.writeSync(0);
     console.log('Led turned off', new Date());
   };
+  io.emit('ledStatus', isLedOn);
 };
 
 // document.getElementById("ledStatus");
@@ -71,6 +72,7 @@ const io = socket(server);
 
 io.on('connection', function(socket){
   console.log('made socket connection', socket.id);
+  io.emit('ledStatus', isLedOn);
 
   socket.on('ledStatus', (isLedOn) => {
     io.sockets.emit('ledStatus', isLedOn);

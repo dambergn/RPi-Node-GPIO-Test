@@ -16,6 +16,13 @@ form.addEventListener('submit', (e) => {
 });
 
 // Listen for events
-socket.on('ledStatus', (ledStatus) => {
-  output.innerHTML = '<p><strong>LED is currently' + isLedOn + '</strong></p>';
+socket.on('ledStatus', (data) => {
+  let led = '';
+  if (data === true) {
+    led = 'on';
+  }
+  if (data === false) {
+    led = 'off';
+  }
+  ledStatus.innerHTML = '<p><strong>LED is currently ' + led + '</strong></p>';
 });
