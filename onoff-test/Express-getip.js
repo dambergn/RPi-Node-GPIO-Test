@@ -1,14 +1,18 @@
 'use strict';
 
 const express = require('express');
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const requestIp = require('request-ip');
+const cors = require('cors');
+const socket = require('socket.io');
 const Gpio = require('onoff').Gpio;
 const led = new Gpio(18, 'out');
 const button = new Gpio(4, 'in', 'both');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+app.use(cors());
+app.use(requestIp.mw());
 
 // static files
 app.use(express.static('public'));
@@ -51,15 +55,24 @@ function switchLed() {
   };
 };
 
+// document.getElementById("ledStatus");
+// if (isLedOn === true) {
+//   document.write('LED is currently On');
+// };
+// if (isLedOn === false) {
+//   document.write('LED is currently Off');
+// };
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log('Listening on port:', PORT, 'use CTRL+C to close.');
 });
 
-io.on('connection', socket => {
+const io = socket(server);
+
+io.on('connection', function(socket){
   console.log('made socket connection', socket.id);
 
-  // socket.on('ledStatus', (data) => {
-  //   io.sockets.emit('ledStatus', data);
-  // });
+  socket.on('ledStatus', (isLedOn) => {
+    io.sockets.emit('ledStatus', isLedOn);
+  });
 });

@@ -71,7 +71,7 @@ sudo adduser pi gpio
 - replace " " with localhost or remote ip address.
 http POST "ip address':3000/led
 
-#command notes
+#WiFi command notes
 sudo apt-get install wpasupplicant
 - ip address
 - sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
@@ -83,3 +83,6 @@ network={
 - sudo rm -rf /var/run/wpa_supplicant/wlan0
 - sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf -Dwext
 - sudo ifup wlan0, wpa_supplicant
+
+#Things to look up
+How to run terminal commands from nodejs.
