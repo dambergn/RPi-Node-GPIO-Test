@@ -85,4 +85,4 @@ network={
 - sudo ifup wlan0, wpa_supplicant
 
 #Things to look up
-How to run terminal commands from nodejs.
+How to run terminal commands from nodejs.`

@@ -31,12 +31,13 @@
           if (event && event.candidate && event.candidate.candidate) {
             var s = event.candidate.candidate.split('\n');
             ip.push(s[0].split(' ')[4]);
+            console.log('variable s', s);
           }
         }
       }
       return ip;
     };
-    console.log(ip_local());
+    console.log(ip_local([0]));
   </script>
 </body>
 <script src="/socket.io/socket.io.js"></script>
